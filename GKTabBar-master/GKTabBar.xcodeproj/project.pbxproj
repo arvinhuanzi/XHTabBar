@@ -458,6 +458,7 @@
 				DEVELOPMENT_TEAM = 3P95U5DQLS;
 				GCC_PREFIX_HEADER = GKTabBar/PrefixHeader.pch;
 				INFOPLIST_FILE = GKTabBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aiyinsitanfm.GKTabBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +474,7 @@
 				DEVELOPMENT_TEAM = 3P95U5DQLS;
 				GCC_PREFIX_HEADER = GKTabBar/PrefixHeader.pch;
 				INFOPLIST_FILE = GKTabBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aiyinsitanfm.GKTabBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
