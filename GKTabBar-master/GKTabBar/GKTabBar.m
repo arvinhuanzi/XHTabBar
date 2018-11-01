@@ -8,10 +8,10 @@
 
 #import "GKTabBar.h"
 #import "GKPlayerButton.h"
-#define SYSTEM_VER      [[[UIDevice currentDevice] systemVersion] floatValue]
-#define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
-#define kTabBarHeight       SYSTEM_VER >= 11.0 ? 83.0f : 49.0f
-#define kScreenW            [UIScreen mainScreen].bounds.size.width
+//#define SYSTEM_VER      [[[UIDevice currentDevice] systemVersion] floatValue]
+//#define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
+//#define kTabBarHeight
+//#define kScreenW            [UIScreen mainScreen].bounds.size.width
 @interface GKTabBar()
 
 @property (nonatomic, strong) GKPlayerButton *playerButton;
@@ -42,7 +42,7 @@
     // 凸起的高度 ((按钮高度 - tabbar高度) / 2 - 15.0)
     CGFloat bulgeHeight = 16.0f;
     // tabbar高度
-    CGFloat tabbarH     = kTabBarHeight;
+    CGFloat tabbarH     = [[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0 ? 83.0f : 49.0f;
     
     // 圆半径
     CGFloat radius = 68.0f * 0.5;
@@ -51,7 +51,7 @@
     CGFloat bulgeSquare = (pow(radius, 2) - pow((radius - bulgeHeight), 2)); // 平方
     CGFloat bulgeWidth = sqrtf(bulgeSquare); // 开平方
     
-    UIView *layerView = [[UIView alloc] initWithFrame:CGRectMake(0, -bulgeHeight, kScreenW, tabbarH + bulgeHeight)];
+    UIView *layerView = [[UIView alloc] initWithFrame:CGRectMake(0, -bulgeHeight, [UIScreen mainScreen].bounds.size.width, tabbarH + bulgeHeight)];
     CGSize size = layerView.frame.size;
     layerView.backgroundColor=[UIColor brownColor];
     
@@ -120,7 +120,7 @@
     CGFloat width  = CGRectGetWidth(self.bounds);
     CGFloat height = CGRectGetHeight(self.bounds);
     
-    CGFloat offsetCenterY = IS_58INCH ? 20 : 7.5f;
+    CGFloat offsetCenterY = [UIScreen mainScreen].bounds.size.height == 812.0f ? 20 : 7.5f;
     
     self.playerButton.center = CGPointMake(width * 0.5, height * 0.5 - offsetCenterY);
     

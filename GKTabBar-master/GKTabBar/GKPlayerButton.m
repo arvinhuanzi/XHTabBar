@@ -7,7 +7,7 @@
 //
 
 #import "GKPlayerButton.h"
-#define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
+//#define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
 
 @interface GKPlayerButton()
 
@@ -50,7 +50,7 @@
         self.playImgView.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
         self.coverImgView.center = self.playImgView.center;
         
-        self.radius      = IS_58INCH ? 28.0f : 25.0f;
+        self.radius      = [UIScreen mainScreen].bounds.size.height == 812.0f ? 28.0f : 25.0f;
         self.lineWidth   = 3.0f;
         self.strokeColor = [UIColor redColor];
     }
