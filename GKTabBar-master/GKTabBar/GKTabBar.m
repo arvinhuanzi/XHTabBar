@@ -8,6 +8,7 @@
 
 #import "GKTabBar.h"
 #import "GKPlayerButton.h"
+#define SYSTEM_VER      [[[UIDevice currentDevice] systemVersion] floatValue]
 #define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
 #define kTabBarHeight       SYSTEM_VER >= 11.0 ? 83.0f : 49.0f
 #define kScreenW            [UIScreen mainScreen].bounds.size.width
