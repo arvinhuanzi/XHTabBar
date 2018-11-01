@@ -7,7 +7,6 @@
 //
 
 #import "GKPlayerButton.h"
-//#define IS_58INCH       [UIScreen mainScreen].bounds.size.height == 812.0f
 
 @interface GKPlayerButton()
 
